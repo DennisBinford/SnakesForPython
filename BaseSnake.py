@@ -20,7 +20,7 @@ snakeBody = []
 # This is the apple.
 # Calling randomRect starts the apple off in a random place on the screen.
 apple = randomRect()
-
+apple2 = randomRect()
 # Set up the screen. Don't worry about this code - it tells python that we want a screen of a certain size
 pygame.init()
 scrHeight = yBound * blockSize
@@ -29,10 +29,11 @@ screen = pygame.display.set_mode((scrHeight, scrWidth))
 initWalls(screen)
 clock = pygame.time.Clock()
 
+
 # This loop is very interesting. When will it stop running?
 # (hint- when is the while condition false?)
 while True:
-    clock.tick(10)
+    clock.tick(15)
 
     # This gets the keyboard input. Don't worry too much about the first couple lines.
     for keypress in pygame.event.get():
@@ -74,7 +75,7 @@ while True:
     hasHitWall = snakeHead.collidelist(walls) != -1
     hasHitBody = snakeHead.collidelist(snakeBody) != -1
     hasEaten = snakeHead.colliderect(apple)
-
+    hasEaten2 = snakeHead.colliderect(apple2)
     # Checks if the head collides with the wall.
     if(hasHitWall):
         quitGame()
@@ -89,9 +90,15 @@ while True:
     if (hasEaten):
         apple = randomRect()
         snakeBody.append(oldPiece)
+        apple2 = randomRect()
+    if (hasEaten2):
+        apple2 = randomRect()
+        snakeBody.append(oldPiece)
+        apple = randomRect()
+
 
     #Graphically draws all the updates we just made.
-    draw(oldPiece, snakeHead, snakeBody, apple, hasEaten, screen)
+    draw(oldPiece, snakeHead, snakeBody, apple, hasEaten, hasEaten2, screen)
     pygame.display.flip()
 
 
