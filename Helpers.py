@@ -85,7 +85,7 @@ def randomRect():
     return Rect(randint(1, xBound - 2) * blockSize, randint(1, yBound - 2) * blockSize, blockSize, blockSize)
 
 # Draw the screen depending on what happens.
-def draw(oldPiece, head, body, appleRect,appleRect2, hasEaten, screen):
+def draw(oldPiece, head, body, appleRect, Apple2, Apple3, Apple4,Apple5, Apple6, Apple7, Apple8, Apple9, Apple10, hasEaten, PowerUp1, PowerUp2, PowerUp2B, PowerUp1B, PowerUp2C, PowerUp1C, RWall, screen):
 
 
     # Draw the head.
@@ -100,7 +100,39 @@ def draw(oldPiece, head, body, appleRect,appleRect2, hasEaten, screen):
 
     # Draw the apple.
     pygame.draw.rect(screen, (255, 0, 0), appleRect)
-    pygame.draw.rect(screen, (255, 100, 0), appleRect)
+
+    pygame.draw.rect(screen, (255,255,255), PowerUp1)
+
+    pygame.draw.rect(screen, (255, 130, 0), PowerUp2)
+
+    pygame.draw.rect(screen, (255,255,255), PowerUp1B)
+
+    pygame.draw.rect(screen, (255, 130, 0), PowerUp2B)
+
+    pygame.draw.rect(screen, (255,255,255), PowerUp1C)
+
+    pygame.draw.rect(screen, (255, 130, 0), PowerUp2C)
+
+    pygame.draw.rect(screen, (255,0,0), Apple2)
+
+    pygame.draw.rect(screen, (255,0,0), Apple3)
+
+    pygame.draw.rect(screen, (255,0,0), Apple4)
+
+    pygame.draw.rect(screen, (255,0,0), Apple5)
+
+    pygame.draw.rect(screen, (255,0,0), Apple6)
+
+    pygame.draw.rect(screen, (255,0,0), Apple7)
+
+    pygame.draw.rect(screen, (255,0,0), Apple8)
+
+    pygame.draw.rect(screen, (255,0,0), Apple9)
+
+    pygame.draw.rect(screen, (255,0,0), Apple10)
+
+    pygame.draw.rect(screen, (0,0,255), RWall)
+
 
 
 
